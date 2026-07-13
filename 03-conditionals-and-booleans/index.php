@@ -1,3 +1,7 @@
+<?php
+    $name = "Dark Matter";
+    $hasBeenRead = true;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +20,12 @@
 </head>
 <body>
     <h1>
-        You have read "Dark Matter."
+        <?php if ($hasBeenRead) {
+            echo "You have read ";
+        } else {
+            echo "You have not read ";
+        } ?>
+        "<?php echo $name; ?>."
     </h1>
 </body>
 </html>
