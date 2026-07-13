@@ -11,8 +11,8 @@
     	<title>Document</title>
     </head>
     <body>
-        <h1
-            <?php echo $greeting . " " . $subject; ?>
+        <h1>
+            <?php echo "$greeting $subject"; ?>
         </h1>
     </body>
 </html>
