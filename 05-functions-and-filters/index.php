@@ -20,15 +20,9 @@
         ],
     ];
 
-    function filterByAuthor($books, $author) {
-        $filteredBooks = [];
-        foreach ($books as $book) {
-            if ($book['author'] === $author) {
-                $filteredBooks[] = $book;
-            }
-        }
-        return $filteredBooks;
-    }
+    $filteredBooks = array_filter($books, function($item) {
+        return $item['author'] === 'Blake Crouch';
+    });
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +36,7 @@
         <h1>Recommended Books</h1>
 
         <ul>
-            <?php foreach (filterByAuthor($books, 'Blake Crouch') as $book) : ?>
+            <?php foreach ($filteredBooks as $book) : ?>
                 <li>
                     <?= $book['name']; ?> by <?= $book['author']; ?>
                     (<a href="<?= $book['purchaseUrl']; ?>">purchase</a>)
