@@ -1,8 +1,23 @@
 <?php
     $books = [
-        "Dark Matter",
-        "The Great Gatsby",
-        "1984",
+        [
+            'name' => 'Dark Matter',
+            'author' => 'Blake Crouch',
+            'year' => 2020,
+            'purchaseUrl' => 'https://example.com/dark-matter',
+        ],
+        [
+            'name' => 'The Great Gatsby',
+            'author' => 'F. Scott Fitzgerald',
+            'year' => 1925,
+            'purchaseUrl' => 'https://example.com/the-great-gatsby',
+        ],
+        [
+            'name' => '1984',
+            'author' => 'George Orwell',
+            'year' => 1949,
+            'purchaseUrl' => 'https://example.com/1984',
+        ],
     ];
 ?>
 
@@ -18,7 +33,10 @@
 
         <ul>
             <?php foreach ($books as $book) : ?>
-                <li><?= $book; ?></li>
+                <li>
+                    <?= $book['name']; ?> by <?= $book['author']; ?>
+                    (<a href="<?= $book['purchaseUrl']; ?>">purchase</a>)
+                </li>
             <?php endforeach; ?>
         </ul>
     </body>
