@@ -20,9 +20,10 @@
         ],
     ];
 
-    $filteredBooks = array_filter($books, function($item) {
-        return $item['author'] === 'Blake Crouch';
-    });
+    $filteredBooks = array_filter(
+        $books,
+        fn ($item) => $item['author'] === 'Blake Crouch'
+    );
 ?>
 
 <!DOCTYPE html>
